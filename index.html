@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exness - Trade with a Global Broker</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Adlam+Unjoined:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <!-- Menu Button (Left) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Logo (Middle) -->
+    <a class="navbar-brand mx-auto" href="#">
+      <img src="./img/logo.jpg" alt="Logo">
+    </a>
+    <!-- Login Button (Right) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#loginSidebar">
+      <i class="bi bi-box-arrow-in-right"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <!-- Background Images -->
+  <img src="./img/logo.jpg" alt="Financial chart background" class="active">
+  <img src="./img/Premium Photo _ Investing forex market and growth concept with digital rising financial chart candlestick and graphs on stock market indicators background 3D rendering.jpeg" alt="Trading graph and city">
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1>Trade with a Global Broker</h1>
+    <p>Invest in 300+ trading instruments, including shares, commodities, and indices.</p>
+    <button>OPEN ACCOUNT</button>
+  </div>
+</section>
+
+<!-- Sidebar Menu -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="nav flex-column">
+      <a class="nav-link" href="#">HOME</a>
+      <a class="nav-link" href="#">INVESTMENTS</a>
+      <a class="nav-link" href="#">FAQs</a>
+      <a class="nav-link underline-before" href="#">About us</a>
+      <a class="nav-link btn btn-trading" href="#">OPEN TRADING ACCOUNT</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Login Sidebar -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="loginSidebar">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Welcome to Exness</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="tab-container">
+      <div class="tab active" onclick="switchTab(event, 'signin')">Sign in</div>
+      <div class="tab" onclick="switchTab(event, 'createaccount')">Create an account</div>
+    </div>
+
+    <!-- Sign In Tab -->
+    <div id="signin" class="tab-content active">
+      <form>
+        <div class="mb-3">
+          <label for="email" class="form-label">Your email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="btn btn-primary">Continue</button>
+      </form>
+      <div class="divider">Or sign in with</div>
+      <div class="social-login">
+        <button class="btn btn-outline-secondary">
+          <i class="bi bi-google"></i> Google
+        </button>
+      </div>
+      <div class="footer-links">
+        <a href="#">I forgot my password</a>
+      </div>
+    </div>
+
+    <!-- Create Account Tab -->
+    <div id="createaccount" class="tab-content">
+      <form>
+        <div class="mb-3">
+          <label for="country" class="form-label">Country / Region of residence</label>
+          <input type="text" class="form-control" id="country" placeholder="Enter your country">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Your email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password">
+          <small class="form-text text-muted">
+            Between 8-15 characters<br>
+            At least one special character<br>
+            At least one upper and one lower case letter<br>
+            At least one number<br>
+          </small>
+        </div>
+        <div class="mb-3">
+          <label for="partnerCode" class="form-label">Partner code (optional)</label>
+          <input type="text" class="form-control" id="partnerCode" placeholder="Enter partner code">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="declaration">
+          <label class="form-check-label" for="declaration">I confirm that I have read and agree to the <a href="#">Client Agreement</a> and <a href="#">Privacy Policy</a></label>
+        </div>
+        <button type="submit" class="btn btn-primary">Continue</button>
+      </form>
+      <div class="divider">Or create an account with</div>
+      <div class="social-login">
+        <button class="btn btn-outline-secondary">
+          <i class="bi bi-google"></i> Google
+        </button>
+      </div>
+    </div>
+    
+    <!-- Legal Text -->
+    <div class="legal-text">
+      <p>Exness does not offer services to residents of certain jurisdictions including the USA, Iran, North Korea, the European Union, the United Kingdom and others. The content of the website including translations should not be construed as means for solicitation. Investors make their own and independent decisions.</p>
+      <p>Trading in CFDs and generally leveraged products involves substantial risk of loss and you may lose all of your invested capital.</p>
+      <p>Exness (SC) Ltd is a Securities Dealer registered in Seychelles with registration number 8423606-1 and authorised by the Financial Services Authority (FSA) with licence number SD025. The registered office of Exness (SC) Ltd is at 8A CT House, 2nd floor, Providence, Mafie, Seychelles.</p>
+      <p>Exness B.V. is a Securities Intermediary registered in Curaçao with registration number 1466980) and authorised by the Central Bank of Curaçao and Sint Maarten (CBCS) with licence number 000315. The registered office of Exness B.V. is at Emancipante Boulevard Dominico F. "Don" Martina 31, Curaçao.</p>
+      <p>Exness (VG) Ltd is authorised by the Financial Services Commission (FSCI) in BVI with registration number 2023252 and investment business licence number SIBA/L/2017133. The registered office of Exness (VG) Ltd is at Trinity Chambers, P.O. Box 4301, Road Town, Tortola, BVI.</p>
+      <p>The entities above are duly authorised to operate under the Exness Board and trademarks.</p>
+      <p>Risk Warning: Our services relate to complex derivative products (CFDs) which are traded outside an exchange. These products come with a high risk of losing money rapidly due to leverage and thus are not appropriate for all investors. Under no circumstances shall Exness have any liability to any person or entity for any loss or damage in whole or part caused by, resulting from, or relating to any investing activity, <a href="#">Learn more</a>.</p>
+      <p>The information on this website does not constitute investment advice or a recommendation or a solicitation to engage in any investment activity.</p>
+      <p>The information on this website may only be copied with the express written permission of Exness.</p>
+      <p>Exness complies with the Payment Card Industry Data Security Standard (PCI DSS) to ensure your security and privacy. We conduct regular vulnerability scans and penetration tests in accordance with the PCI DSS requirements for our business model.</p>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="footer-links">
+      <a href="#">Privacy Agreement</a>
+      <a href="#">Risk disclosure</a>
+      <a href="#">Preventing money laundering</a>
+      <a href="#">Security instructions</a>
+      <a href="#">Legal documents</a>
+      <a href="#">Complaints Handling Policy</a>
+    </div>
+    <div class="text-center mt-3">
+      <p>© 2008-2025. Exness</p>
+    </div>
+  </div>
+</div>
+<div class="pricing-page">
+    <div class="pricing-section">
+      <h1>Choose Your Best Option To Start Trading</h1>
+      <p>Safety track, easy & become digital assets with top-tier security.</p>
+
+      <div class="pricing-cards">
+        <!-- Basic Plan -->
+        <div class="pricing-card">
+          <h2>Spot Trading</h2>
+          <h3>5,500-100,000</h3>
+          <p>Buy and sell actual coins on our exchange platform</p>
+          <ul>
+            <li>Supported coins: BTC, XRP, ETH</li>
+            <li>3 months: $5,500 → $33,800</li>
+            <li>6 months: $5,500 → $62,100</li>
+            <li>12 months: $5,500 → $118,700</li>
+            <li>Direct bank transfer or crypto wallet payment</li>
+          </ul>
+          <button>Start Trading</button>
+        </div>
+
+        <!-- Starter Plan -->
+        <div class="pricing-card">
+          <h2>Margin Trading</h2>
+          <h3>10,000-100,000</h3>
+          <p>Use borrowed funds to control larger positions</p>
+          <ul>
+            <li>Minimum suggested capital: $1,000-$2,000
+            </li>
+            <li>Platform provides leveraged funds</li>
+            <li>Minimum return: $10,000 after trade</li>
+            <li>30% profit sharing with platform</li>
+            <li>Advanced risk management tools</li>
+          </ul>
+          <button>Get Leveraged</button>
+        </div>
+
+        <!-- Business Plan -->
+        <div class="pricing-card">
+          <h2>Futures Trading</h2>
+          <h3>500-25,000</h3>
+          <p>Trade contracts based on future crypto prices</p>
+          <ul>
+            <li>Beginner minimum: $500-$5,000</li>
+            <li>Active trader range: $10,000-$25,000</li>
+            <li>Manage intraday volatility</li>
+            <li>Specific margin requirements</li>
+            <li>Advanced charting tools</li>
+          </ul>
+          <button>Trade Futures</button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card">
+          <h2>Algorithmic Trading</h2>
+          <h3>500-2000+</h3>
+          <p>Automated trading with pre-programmed strategies</p>
+          <ul>
+            <li>Basic strategies: $500-$1,000</li>
+            <li>High-frequency trading: $2,000+</li>
+            <li>Customizable trading bots</li>
+            <li>Technical signal execution</li>
+            <li>24/7 market monitoring</li>
+          </ul>
+          <button>Automate Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gold-oil-body">
+    <div class="gold-oil-container">
+      <!-- Top Section: Heading and Description -->
+      <h1 class="gold-oil-h1">Thrive in the Gold & Oil Markets</h1>
+      <p class="gold-oil-p gold-oil-text-grey">Trading conditions can make or break a strategy, that’s why you need the best.</p>
+
+      <!-- Two Columns with Image in the Middle -->
+      <div class="gold-oil-columns">
+        <!-- Column 1: Withdrawals, Spreads, Support -->
+        <div class="gold-oil-column">
+          <div class="gold-oil-row">
+            <div class="gold-oil-section-title">Withdrawals</div>
+            <h3 class="gold-oil-h3">Instant withdrawals</h3>
+            <p class="gold-oil-p-small gold-oil-text-grey">Get your deposits and withdrawals approved the moment you click the button.<sup>1</sup></p>
+          </div>
+
+          <div class="gold-oil-row">
+            <div class="gold-oil-section-title">Spreads</div>
+            <h3 class="gold-oil-h3">The best spreads<sup>2</sup> on gold</h3>
+            <p class="gold-oil-p-small gold-oil-text-grey">Trade with the tightest & most stable spreads in the market.</p>
+          </div>
+
+          <div class="gold-oil-row">
+            <div class="gold-oil-section-title">Support</div>
+            <h3 class="gold-oil-h3">24/7 live support</h3>
+            <p class="gold-oil-p-small gold-oil-text-grey">Get answers in minutes. Contact our support team 24/7 by phone, email, or live chat.</p>
+          </div>
+        </div>
+
+        <!-- Image in the Middle -->
+        <img src="./img/WhatsApp Image 2025-04-01 at 11.07.42_9857e3ff.jpg" alt="Gold & Oil Markets" class="gold-oil-image">
+
+        <!-- Column 2: Execution, Swaps, Platforms -->
+        <div class="gold-oil-column">
+          <div class="gold-oil-row">
+            <div class="gold-oil-section-title">Execution speed</div>
+            <h3 class="gold-oil-h3">Ultra-fast execution</h3>
+            <p class="gold-oil-p-small gold-oil-text-grey">Execute your orders in milliseconds, no matter how big they are.</p>
+          </div>
+
+          <div class="gold-oil-row">
+            <div class="gold-oil-section-title">Swaps</div>
+            <h3 class="gold-oil-h3">No overnight fees</h3>
+            <p class="gold-oil-p-small gold-oil-text-grey">Hold your leveraged positions for as long as you like, swap-free. T&C apply.</p>
+          </div>
+
+          <div class="gold-oil-row">
+            <div class="gold-oil-section-title">Platforms</div>
+            <h3 class="gold-oil-h3">Reliable platforms</h3>
+            <p class="gold-oil-p-small gold-oil-text-grey">Experience the ultimate in stability and execution speed. No matter the size of your order.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Note -->
+      <div class="gold-oil-footer-note">
+        <p><sup>1</sup> Terms and conditions apply.</p>
+        <p><sup>2</sup> Subject to market conditions.</p>
+      </div>
+    </div>
+  </div>
+  <section class="ts-wrapper ts-testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="ts-testimonials-row">
+        <!-- Testimonial 1 -->
+        <div class="ts-testimonial-item">
+          <div class="ts-card">
+            <div class="ts-card-body">
+              <div class="ts-rating">★★★★★</div>
+              <p class="ts-card-text">"I've been trading for over 5 years, and this platform is by far the most user-friendly and reliable. The tools and analytics provided have helped me make better decisions and grow my portfolio significantly."</p>
+              <footer class="ts-blockquote-footer">
+                <img src="./Testimony 1.jpg" alt="Testimonial Image" class="ts-testimonial-img">
+                <div class="ts-cite">
+                  Manila 6
+                  <span>Corporate Trader</span>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="ts-testimonial-item">
+          <div class="ts-card">
+            <div class="ts-card-body">
+              <div class="ts-rating">★★★★☆</div>
+              <p class="ts-card-text">"The customer support is exceptional. Whenever I had questions, the team was responsive and knowledgeable. The platform's intuitive design makes complex trading strategies accessible to everyone."</p>
+              <footer class="ts-blockquote-footer">
+                <img src="./Testimony 2.jpg" alt="Testimonial Image" class="ts-testimonial-img">
+                <div class="ts-cite">
+                  John Newman
+                  <span>Day Trader</span>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="ts-testimonial-item">
+          <div class="ts-card">
+            <div class="ts-card-body">
+              <div class="ts-rating">★★★★★</div>
+              <p class="ts-card-text">"As a beginner, I was nervous about trading, but the educational resources and demo account gave me the confidence to start. Now I'm consistently profitable thanks to this platform."</p>
+              <footer class="ts-blockquote-footer">
+                <img src="./Testimony 3.jpg" alt="Testimonial Image" class="ts-testimonial-img">
+                <div class="ts-cite">
+                  Shawn Ho
+                  <span>Investor</span>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="ta-container">
+    <h1 class="ta-heading">Trade assets from global markets</h1>
+    <p class="ta-subtitle">Capitalize on every opportunity with the world's most popular assets.</p>
+    
+    <div class="ta-table-container">
+        <table class="ta-table">
+            <thead>
+                <tr>
+                    <th style="min-width: 200px;">Instruments</th>
+                    <th style="min-width: 100px;">Leverage</th>
+                    <th style="min-width: 120px;">Avg. spread³, pips</th>
+                    <th style="min-width: 120px;">Swap-free</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ta-instrument">
+                        <img src="./gold.jpg" alt="Gold" class="ta-instrument-icon">
+                        <div class="ta-instrument-name"><strong>XAUUSD</strong> Gold vs US Dollar</div>
+                    </td>
+                    <td>Customizable</td>
+                    <td>11.2</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td class="ta-instrument">
+                        <img src="./oil.jpg" alt="Oil" class="ta-instrument-icon">
+                        <div class="ta-instrument-name"><strong>USOIL</strong> Crude Oil</div>
+                    </td>
+                    <td>1:200</td>
+                    <td>1.2</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td class="ta-instrument">
+                        <img src="./eur.jpg" alt="EURUSD" class="ta-instrument-icon">
+                        <div class="ta-instrument-name"><strong>EURUSD</strong> Euro vs US Dollar</div>
+                    </td>
+                    <td>Customizable</td>
+                    <td>0.6</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td class="ta-instrument">
+                        <img src="./us30.jpg" alt="Index" class="ta-instrument-icon">
+                        <div class="ta-instrument-name"><strong>US30</strong> US Wall Street 30 Index</div>
+                    </td>
+                    <td>1:400</td>
+                    <td>1.8</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td class="ta-instrument">
+                        <img src="./apple.jpg" alt="Apple" class="ta-instrument-icon">
+                        <div class="ta-instrument-name"><strong>AAPL</strong> Apple Inc.</div>
+                    </td>
+                    <td>1:20</td>
+                    <td>0.9</td>
+                    <td>Swap applied</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <hr class="ta-divider">
+    
+    <div class="ta-register-section">
+        <a href="#" class="ta-register-btn" id="ta-register-btn">Register</a>
+    </div>
+</div>
+<body class="exness-body">
+    <div class="exness-container">
+        <header class="exness-header">
+            <h1 class="exness-heading">Exness Market Insights</h1>
+            <p class="exness-subheading">Stay on top of our news, product and technology updates, events, partnerships, and more.</p>
+        </header>
+        
+        <main class="exness-news-grid">
+            <article class="exness-news-card">
+                <div class="exness-card-image-container">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Stock Market Analysis" class="exness-card-image">
+                    <span class="exness-news-date">March 24, 2025</span>
+                </div>
+                <div class="exness-card-content">
+                    <span class="exness-card-category">Market Analysis</span>
+                    <h3 class="exness-card-title">Trump's Tariffs: Complete Guide to Trading the Impact</h3>
+                    <p class="exness-card-description">Analyze how the new tariff policies may affect S&P 500 and USD pairs, with expert trading strategies for volatile markets.</p>
+                    <a href="#" class="exness-read-more">
+                        Read analysis
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            
+            <article class="exness-news-card">
+                <div class="exness-card-image-container">
+                    <img src="https://images.unsplash.com/photo-1468254095679-bbcba94a7066?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Economic Calendar" class="exness-card-image">
+                    <span class="exness-news-date">March 22, 2025</span>
+                </div>
+                <div class="exness-card-content">
+                    <span class="exness-card-category">Economic Events</span>
+                    <h3 class="exness-card-title">Key PMI Releases Driving Market Sentiment</h3>
+                    <p class="exness-card-description">This week's crucial purchasing managers' index data from major economies and how to interpret potential market reactions.</p>
+                    <a href="#" class="exness-read-more">
+                        Read report
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            
+            <article class="exness-news-card">
+                <div class="exness-card-image-container">
+                    <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Weekly Market Roundup" class="exness-card-image">
+                    <span class="exness-news-date">March 20, 2025</span>
+                </div>
+                <div class="exness-card-content">
+                    <span class="exness-card-category">Weekly Roundup</span>
+                    <h3 class="exness-card-title">Interest Rates, Indices Struggles, and Gold Optimism</h3>
+                    <p class="exness-card-description">Your comprehensive weekly digest covering central bank decisions, commodity trends, and key sector performances.</p>
+                    <a href="#" class="exness-read-more">
+                        Read summary
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        </main>
+        
+        
+    </div>
+ </body>   
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function switchTab(event, tabName) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => {
+      tab.classList.remove('active');
+    });
+    
+    // Show the selected tab content
+    document.getElementById(tabName).classList.add('active');
+
+    // Remove active class from all tabs
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.classList.remove('active');
+    });
+    
+    // Add active class to the clicked tab
+    event.currentTarget.classList.add('active');
+  }
+
+  // Hero section image carousel
+  const images = document.querySelectorAll('.hero-section img');
+  let currentIndex = 0;
+
+  function showNextImage() {
+    // Hide the current image
+    images[currentIndex].classList.remove('active');
+
+    // Move to the next image
+    currentIndex = (currentIndex + 1) % images.length;
+
+    // Show the next image
+    images[currentIndex].classList.add('active');
+  }
+
+  // Change image every 5 seconds
+  setInterval(showNextImage, 5000);
+</script>
+</body>
+</html>
